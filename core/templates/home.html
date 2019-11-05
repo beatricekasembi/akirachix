@@ -1,33 +1,51 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title> Registration </title>
+  <title>Registration</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
-
 <body>
-	{% if user.is_authenticated %}
-	you are logged in
-
-	Welcome{{user.username}}
-	Add a student
-	<a href="/student/add/">Here</a>
-	or
-	Log out 
-	<a href="/accounts/logout"/>Here</a>
 
 
 
-	{% else %}
-	you are not logged in
+<div class="container">
 
-	Hello guest
-	You can log in
-	<a href="/accounts/login/">Here</a>
-	or 
-	create an account
-	<a href="/accounts/register/">Here</a>
+  {%if user.is_authenticated%}
+  <h1>Welcome</h1><br>
+<!--   <p>The form below contains two input elements; one of type text and one of type password:</p>
+ --> 
+  <form action="/action_page.php">
+    <div class="form-group">
+      <label for="usr"></label>
+      Add a student <a href="/student/add">here</a><input type="text" class="form-control" id="usr" name="student">
+    </div>
+    <div class="form-group">
+      <label for="pwd"></label> 
 
 
-	{% end if %}
+<!-- {%else%}
+you are not logged in
+Hello guest you can log in!!!
+or
+<a href="/accounts/register">here</a>
+{%endif%} -->
+
+      <input type="password" class="form-control" id="pwd" name="password">
+    </div>
+   <button class="btn btn-primary">
+      Submit
+
+  </form>
+
+</div>
+
+You are logged in to this account <a href="/accounts/login">here</a>
+Logout <a href="accounts/logout">here</a><br>
+
 </body>
 </html>
-

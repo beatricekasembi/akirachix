@@ -12,6 +12,7 @@ class Teacher(models.Model):
 	experience = models.CharField(max_length=20)
 	date_joined = models.DateField()
 	id_number = models.SmallIntegerField()
+	
 
 	def __str__(self):
 		return self.first_name
