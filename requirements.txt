@@ -2,7 +2,7 @@ icertifi==2019.6.16
 chardet==3.0.4
 Django==2.2.1
 django-registration-redux==2.6
-djangorestframework==3.9.4
+djangorestframework==3.11.2
 gunicorn==19.9.0
 idna==2.8
 python-dateutil==1.5
